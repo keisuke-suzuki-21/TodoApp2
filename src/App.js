@@ -12,6 +12,10 @@ export class App {
      * @param {string} title
      */
     handleAdd(title) {
+        // inputが空の時、追加されないようにする
+        if(title === ""){
+            return;
+        }
         this.#todoListModel.addTodo(new TodoItemModel({ title, completed: false }));
     }
 
